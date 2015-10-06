@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{{applicationName}}</title>
+
+    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="//cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/0.4.15/toaster.min.css" rel="stylesheet" />
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css" rel="stylesheet" />
+
+    <link href="/css/app.css" rel="stylesheet" />
+    <link href="/css/custom.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <section class="app app-header-fixed app-aside-fixed" id="app">
+
+        <header class="app-header navbar">
+            <div class="navbar-header bg-black">
+                <button class="pull-right visible-xs dk" ng-click="showHeader = !showHeader">
+                    <i class="glyphicon glyphicon-cog"></i>
+                </button>
+                <button class="pull-right visible-xs" ng-click="showMenu = !showMenu">
+                    <i class="glyphicon glyphicon-align-justify"></i>
+                </button>
+
+                <a href="#/" class="navbar-brand text-lt">
+                    <i class="fa fa-comment"></i>
+                    <span class="hidden-folded m-l-xs ng-binding">{{applicationName}}</span>
+                </a>
+            </div>
+
+
+            <div class="collapse pos-rlt navbar-collapse box-shadow bg-white-only" ng-class="{ show: showHeader }">
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle clear" data-toggle="dropdown">
+                            <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
+                                <img src="img/a0.jpg" alt="...">
+                                <i class="on md b-white bottom"></i>
+                            </span>
+                            <span class="hidden-sm hidden-md">Joaquim Barbosa</span> <b class="caret"></b>
+                        </a>
+
+                        <ul class="dropdown-menu animated fadeInRight w">
+                            <li><a href="/">Sair</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </header>
+
+        <div class="app-aside hidden-xs bg-black" ng-class="{ 'off-screen': showMenu }">
+            <div class="aside-wrap">
+                <div class="navi-wrap">
+
+                    <nav ui-nav="" class="navi">
+                        <ul class="nav ng-scope">
+                            <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+                                <span>Admin</span>
+                            </li>
+                            <li menu-active>
+                                <a href="#/dashboard" ng-click="showMenu = false">
+                                    <i class="glyphicon glyphicon-stats icon text-primary-dker"></i> Dashboard
+                                </a>
+                            </li>
+                            <li menu-active>
+                                <a href="#/schools" ng-click="showMenu = false">
+                                    <i class="fa fa-building"></i> Instituições
+                                </a>
+                            </li>
+                            <li menu-active>
+                                <a href="#/messages" ng-click="showMenu = false">
+                                    <i class="glyphicon glyphicon-comment icon text-info-dker"></i> Mensagens
+                                </a>
+                            </li>
+                            <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+                                <span>Responsáveis</span>
+                            </li>
+                            <li menu-active>
+                                <a href="#/do" ng-click="showMenu = false">
+                                    <i class="fa fa-bell icon text-primary-dker"></i> Hoje
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="app-content">
+            <div class="hbox hbox-auto-xs hbox-auto-sm ng-cloak">
+                <div class="app-content-body" ng-view></div>
+            </div>
+        </div>
+    </section>
+
+    <toaster-container></toaster-container>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
+    <script src="//ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.min.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-route.min.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/0.4.15/toaster.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.4/ui-bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.4/ui-bootstrap-tpls.min.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/easy-pie-chart/2.1.4/jquery.easypiechart.min.js"></script>
+    <script src="/vendor/flot/jquery.flot.min.js"></script>
+    <script src="/vendor/flot/jquery.flot.orderBars.js"></script>
+    <script src="/vendor/flot/jquery.flot.pie.min.js"></script>
+    <script src="/vendor/flot/jquery.flot.resize.js"></script>
+    <script src="/vendor/flot/jquery.flot.spline.js"></script>
+    <script src="/vendor/flot/jquery.flot.tooltip.min.js"></script>
+    <script src="/vendor/sparkline/jquery.sparkline.min.js"></script>
+
+    <script src="/src/app.js"></script>
+    <script src="/src/charts/donut.js"></script>
+    <script src="/src/charts/line.js"></script>
+    <script src="/src/charts/percent.js"></script>
+</body>
+
+</html>

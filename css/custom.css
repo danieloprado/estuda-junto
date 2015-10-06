@@ -1,0 +1,67 @@
+.field-validation-error {
+    color: #af2726;
+    display: block;
+    font-size: 12px;
+    margin-top: 5px;
+    float: left;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+#toast-container {
+    top: 70px;
+}
+
+.login-form {
+    padding: 50px;
+}
+
+.clearfix:before,
+.clearfix:after {
+    position: static;
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    position: static;
+    clear: both;
+}
+
+.panel {
+    border: 1px solid #dee5e7;
+}
+
+header h1 {
+    display: inline-block;
+}
+
+.login .modal-center {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 300px;
+    height: 250px;
+}
+
+.login i.logo {
+    font-size: 50px;
+}
+
+.w-auto {
+    display: inline-block;
+    width: auto !important;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.completed-do i {
+    font-size: 100px;
+}
